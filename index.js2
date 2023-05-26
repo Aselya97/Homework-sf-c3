@@ -1,0 +1,14 @@
+
+function receivingStringAndObject (string, object) {
+    return (string in object)
+ }
+const chair = {
+    name : "armchair" ,
+    color: "pink",
+    price : 1000
+ }
+
+ console.log (receivingStringAndObject ("name" , chair));
+ console.log (receivingStringAndObject ("install" , chair))
+ 
+\\ true false

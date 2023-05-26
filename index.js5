@@ -1,0 +1,86 @@
+
+class CoolingAppliance {
+    constructor(name, power) {
+        this.name = name;    
+        this.power = power;
+        this.isConnected = false;
+    }
+
+    //Метод - определяющий подключено ли устройство к сети
+    connection() {
+        console.log(this.name + " is connected");
+        this.isConnected = true;
+    }
+
+    //Метод - определяющий отключено ли устройство от сети
+    disconnection() {
+        console.log(this.name + " is disconnected!");
+        this.isConnected = false;
+    }
+}
+    
+
+
+  // Вентилятор
+  
+class Fan extends CoolingAppliance {
+    constructor (name, brand,power,control) {
+      super(name,power);
+      this.name = name;
+        this.brand = brand;
+        this.power = power;
+        this.control = control; 
+        this.isConnected = true;
+    }
+}
+
+// Увлажнитель
+class Humidifier extends CoolingAppliance {
+  constructor(name, brand, power, peculiarity) {
+    super(name,power);
+    this.name = name; 
+    this.brand = brand;
+    this.power = power;
+    this.peculiarity = peculiarity;
+    this.isConnected = false;
+   }
+}
+
+
+
+// Вентилятор
+const homeFan = new Fan("Home Fan", "Xiaomi", 22, "electronic");
+
+// Увлажнитель
+const homeHumidifier = new Humidifier("Humidifier", "Kitfort", 37, "for home", "aromatization");
+
+// выключить вентилятор 
+ homeFan.disconnection () ;
+
+// включить увлажнитель
+ homeHumidifier.connection () ;
+
+// результат
+console.log(homeFan)
+console.log(homeHumidifier)
+
+
+
+
+
+"Home Fan is disconnected!"
+"Humidifier is connected"
+[object Object] {
+  brand: "Xiaomi",
+  control: "electronic",
+  isConnected: false,
+  name: "Home Fan",
+  power: 22
+}
+[object Object] {
+  brand: "Kitfort",
+  isConnected: true,
+  name: "Humidifier",
+  peculiarity: "for home",
+  power: 37
+}

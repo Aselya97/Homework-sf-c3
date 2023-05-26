@@ -1,0 +1,57 @@
+function CoolingAppliance (name, power) {
+    this.name = name;
+    this.power = power;
+    this.isConnected = false;
+}
+
+// метод, который определяет прибор как включенный в розетку
+CoolingAppliance.prototype.connection = function () {
+    console.log (this.name + " is connected!") ;
+    this.isConnected = true;
+};
+
+// метод, который определяет прибор как выключеный из розетки
+CoolingAppliance.prototype.disconnection = function () {
+    console.log (this.name + " is disconnected!") ;
+    this.isDisconnected = false;
+};
+
+// Электроприбор 1
+function Fan (name, brand, power, control) {
+    this.name = name;
+    this.brand = brand;
+    this.power = power;
+    this.control = control;
+    this.isConnected = true;
+}
+
+Fan.prototype = new CoolingAppliance () ;
+
+
+// Электроприбор 2
+function Humidifier ( name, brand, power, type, peculiarity) {
+    this.name = name;
+    this.brand = brand;
+    this.power = power;
+    this.type = type;
+    this.peculiarity = peculiarity;
+    this.isConnected = false;
+}
+
+ Humidifier.prototype = new CoolingAppliance () ;
+
+// экземпляр вентилятора
+const homeFan = new Fan ("Home Fan", "Xiaomi", 22, "LED") ;
+
+// экземпляр увлажнителя
+const homeHumidifier = new Humidifier ("Humidifier", "Kitfort", 37, "for home", "aromatization") ;
+
+// отключить вентилятор из розетки
+homeFan.disconnection () ;
+
+// включить увлажнитель в розетку
+homeHumidifier.connection () ;
+
+// результат
+console.log(homeFan)
+console.log(homeHumidifier)

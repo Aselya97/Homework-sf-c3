@@ -1,0 +1,16 @@
+
+const userValiullina = function(a) {
+    a = {Имя: 'Аселя',
+    Фамилия: 'Валиуллина',
+    Возраст: '25'}
+  for (let key in a) {
+    console.log(key+ ': ' + a[key]);
+  }
+    
+   }
+  userValiullina();
+   
+
+"Имя: Аселя"
+"Фамилия: Валиуллина"
+"Возраст: 25"

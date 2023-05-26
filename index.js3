@@ -1,0 +1,7 @@
+function createObjAndRemovePrototype() {
+  return Object.create(null);
+}
+
+
+console.log(createObjAndRemovePrototype());
+
